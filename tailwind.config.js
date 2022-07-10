@@ -10,24 +10,27 @@ module.exports = {
       colors: {
         transparent: "transparent",
         current: "currentColor",
-        turquoise: {
-          DEFAULT: "#1C9CB2",
+        lightyellow: {
+          DEFAULT: "#F2EFB6",
         },
-        turquoiseDark: {
-          DEFAULT: "#18879a",
+        lightblue: {
+          DEFAULT: "#A0EDF7",
         },
-        turquoiseLight: {
-          DEFAULT: "#1fadc7",
+        green: {
+          DEFAULT: "#00B2B2",
         },
-        turquoiseLighter: {
-          DEFAULT: "#22c1dd",
+        blue: {
+          DEFAULT: "#0C69BF",
+        },
+        darkblue: {
+          DEFAULT: "#141C64",
+        },
+        grey100: {
+          DEFAULT: "#D9DFE1",
         },
       },
       fontFamily: {
-        sans: ["Montserrat-Regular"],
-        orbitron: ["Orbitron"],
-        orbitronbold: ["Orbitron-Bold"],
-        orbitronblack: ["Orbitron-Black"],
+        sans: ["Asap", "sans-serif"],
         mono: ["curier"],
       },
     },

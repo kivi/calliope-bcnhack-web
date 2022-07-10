@@ -7,6 +7,7 @@ import { useEthers } from "@usedapp/core"
 import { useCurrentUser } from "app/core/hooks/useCurrentUser"
 import Spinner from "./Spinner"
 import { classNames } from "app/utils/helper"
+import { ConnectWalletButton } from "./ConnectWalletButton"
 // import { ConnectWalletButton } from "./ConnectWalletButton"
 
 // import ethers from "ethers"
@@ -87,26 +88,6 @@ const WalletAddress = () => {
     <div className={classNames("w-20", account ? "text-white" : "text-red-400")}>
       <p className="text-clip overflow-hidden ...">{account ? account : "not connected"}</p>
     </div>
-  )
-}
-
-const ConnectWalletButton = () => {
-  const { account, activateBrowserWallet } = useEthers()
-
-  return (
-    <Suspense fallback={<Spinner className="text-yellow-500" />}>
-      <div className="h-8 w-8 rounded-full " aria-hidden="true">
-        <div
-          className={classNames(
-            account ? "text-green-600" : "text-red-300",
-            "h-8 w-8 rounded-full"
-          )}
-          onClick={account ? () => undefined : activateBrowserWallet} // onClick only to connect
-        >
-          {account ? <LockOpenIcon /> : <LockClosedIcon />}
-        </div>
-      </div>
-    </Suspense>
   )
 }
 
@@ -265,16 +246,8 @@ export default function Nav() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <img
-                    className="block lg:hidden h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                    alt="Workflow"
-                  />
-                  <img
-                    className="hidden lg:block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                    alt="Workflow"
-                  />
+                  <img className="block lg:hidden h-8 w-auto" src="/favicon.svg" alt="Workflow" />
+                  <img className="hidden lg:block h-8 w-auto" src="/logo.svg" alt="Workflow" />
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">

@@ -21,7 +21,7 @@
   textarea,
   select,
   input {
-    @apply appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-turquoise focus:border-turquoise sm:text-sm;
+    @apply appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-green focus:border-green sm:text-sm;
   }
   /* label {
     @apply block text-sm font-medium text-gray-700 border-white;
@@ -34,28 +34,33 @@
   }
 
   /* Fonts */
+  @import url("https://fonts.googleapis.com/css2?family=Asap&display=swap");
+}
+
+body {
+  @apply font-sans text-lg;
 }
 
 .footernav,
 .navitem,
 .menuitem,
 footer h3 {
-  @apply font-orbitron uppercase;
+  @apply uppercase;
 }
 
 footer h3 {
-  @apply text-base font-bold text-turquoise tracking-wider;
+  @apply text-base font-bold text-green tracking-wider;
 }
 .footernav ul li a {
   @apply text-sm text-gray-500 hover:text-white;
 }
 
 .navitem {
-  @apply text-gray-300 hover:bg-gray-700 hover:text-turquoise px-3 py-2 rounded-md text-sm font-bold;
+  @apply text-gray-300 hover:bg-gray-700 hover:text-green px-3 py-2 rounded-md text-sm font-bold;
 }
 
 .menuitem {
-  @apply text-gray-300 hover:bg-gray-700 hover:text-turquoise rounded-md font-bold  px-3 py-2;
+  @apply text-gray-300 hover:bg-gray-700 hover:text-green rounded-md font-bold  px-3 py-2;
 }
 .large {
   @apply rounded-md text-sm;
@@ -98,10 +103,10 @@ footer h3 {
 }
 
 .btn {
-  @apply w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm hover:shadow-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-turquoise;
+  @apply text-grey100 w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm hover:text-black hover:shadow-lg hover:bg-grey100 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green;
 }
 .icon-btn {
-  @apply w-full flex justify-center rounded-md py-1 px-2 text-xs focus:ring-1 focus:ring-offset-1 focus:ring-turquoise shadow-sm hover:shadow-lg border border-transparent;
+  @apply w-full flex justify-center rounded-md py-1 px-2 text-xs focus:ring-1 focus:ring-offset-1 focus:ring-green shadow-sm hover:shadow-lg border border-transparent;
 }
 
 .btn-large {
@@ -115,16 +120,13 @@ footer h3 {
 .btn-disabled {
   @apply bg-gray-200 hover:bg-gray-300;
 }
-/* button {
-  @apply btn;
-} */
 
 .primary {
-  @apply text-white hover:text-gray-200 bg-turquoise hover:bg-turquoiseDark focus:ring-turquoise shadow-sm hover:shadow-lg;
+  @apply text-white hover:text-gray-200 bg-green hover:bg-lightblue focus:ring-green shadow-sm hover:shadow-lg;
 }
 
 .secondary {
-  @apply text-turquoise hover:text-white bg-gray-200 hover:bg-turquoise border-gray-300 focus:ring-turquoise shadow-sm hover:shadow-lg;
+  @apply text-green hover:text-white bg-gray-200 hover:bg-green border-gray-300 focus:ring-green shadow-sm hover:shadow-lg;
 }
 .warning {
   @apply text-gray-700 hover:text-gray-800 bg-yellow-300 hover:bg-yellow-400;
@@ -168,50 +170,28 @@ img.hover-zoom:hover {
 }
 
 .profile-icon svg {
-  fill: #1c9cb2; /* turquoise */
+  fill: #1c9cb2; /* green */
   stroke-dashoffset: 0;
   stroke-dasharray: 700;
   stroke-width: 2;
 }
 .profile-icon svg:hover {
-  fill: #ccc; /* turquoise */
-}
-
-.legacyTeam table {
-  @apply min-w-full divide-y divide-gray-200;
-}
-.legacyTeam th {
-  @apply font-orbitronbold min-w-full divide-y divide-gray-200 bg-gray-100;
-}
-.legacyTeam td {
-  @apply px-6 py-4 whitespace-nowrap text-sm text-gray-500;
-}
-
-.legacyTeam td img {
-  @apply h-10 w-10 rounded-none;
-}
-
-.legacyTeam tr:nth-child(even) {
-  @apply bg-white;
-}
-
-.legacyTeam tr:nth-child(odd) {
-  @apply bg-gray-50;
+  fill: #ccc; /* green */
 }
 
 input:checked + div {
-  @apply border-turquoise;
+  @apply border-green;
 }
 input:checked + div svg {
   @apply block;
 }
 
 .userprofileicon {
-  @apply h-6 w-6 fill-current text-gray-800 hover:text-turquoise;
+  @apply h-6 w-6 fill-current text-gray-800 hover:text-green;
 }
 
 .footericon {
-  @apply h-8 w-8 fill-current text-gray-400 hover:text-turquoise;
+  @apply h-8 w-8 fill-current text-gray-400 hover:text-green;
 }
 .anglerTeamTable tbody {
   @apply bg-white divide-y divide-gray-200;
@@ -224,3 +204,9 @@ input:checked + div svg {
 .anglerTeamTable td {
   @apply px-1 py-1 whitespace-nowrap sm:px-6 sm:py-4;
 }
+
+/*
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
+*/
