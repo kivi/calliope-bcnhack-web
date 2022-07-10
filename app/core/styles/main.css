@@ -103,7 +103,7 @@ footer h3 {
 }
 
 .btn {
-  @apply text-grey100 w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm hover:text-black hover:shadow-lg hover:bg-grey100 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green;
+  @apply text-grey100 border-grey100 border-solid border-2 w-full flex justify-center py-2 px-4 rounded-full shadow-sm hover:text-black hover:shadow-lg hover:bg-grey100 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green;
 }
 .icon-btn {
   @apply w-full flex justify-center rounded-md py-1 px-2 text-xs focus:ring-1 focus:ring-offset-1 focus:ring-green shadow-sm hover:shadow-lg border border-transparent;
