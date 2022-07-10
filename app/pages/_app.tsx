@@ -14,6 +14,8 @@ import { Suspense } from "react"
 
 import { Mumbai, ChainId, Config, DAppProvider, useEthers } from "@usedapp/core"
 import { getDefaultProvider } from "ethers"
+import { getMumbaiTestnetProvider } from "app/utils/helper"
+import { Player } from "app/core/components/Player"
 
 // declare global {
 //   interface Window {
@@ -24,7 +26,7 @@ import { getDefaultProvider } from "ethers"
 const config: Config = {
   readOnlyChainId: ChainId.Mumbai, // ChainId.Polygon
   readOnlyUrls: {
-    [Mumbai.chainId]: "https://rpc-mumbai.maticvigil.com/", // getDefaultProvider("testnet"),
+    [Mumbai.chainId]: getMumbaiTestnetProvider(), // getDefaultProvider("testnet"),
   },
 }
 
@@ -38,6 +40,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <Suspense fallback="loading ...">
         <DAppProvider config={config}>
           <Nav />
+          {"Player >>>>>"}
+          <Player />
+          {"<<<<<< Player"}
         </DAppProvider>
       </Suspense>
 
