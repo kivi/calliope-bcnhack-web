@@ -40,9 +40,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Suspense fallback="loading ...">
         <DAppProvider config={config}>
           <Nav />
-          {"Player >>>>>"}
           <Player />
-          {"<<<<<< Player"}
         </DAppProvider>
       </Suspense>
 
