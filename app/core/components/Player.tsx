@@ -1,7 +1,7 @@
 import ReactHowler from "react-howler"
-import SuperfluidClient from "app/utils/SuperfluidClient"
+// import SuperfluidClient from "app/utils/SuperfluidClient"
 
-// import SuperfluidClient from "app/utils/superfluidcli"
+import SuperfluidClient from "app/utils/superfluidcli"
 
 import { ethers } from "ethers"
 import { FunctionComponent, Suspense, useEffect, useState } from "react"
@@ -18,40 +18,40 @@ import {
 import { getDefaultProvider, providers } from "ethers"
 
 const flowRate = 100
-export const url = "https://eth-goerli.alchemyapi.io/v2/zfWv3pEito9Wi7gDUSLsand11To5VEjN"
-export const customHttpProvider = new providers.JsonRpcProvider(url)
-
-// const superfluidClient = SuperfluidClient as any
-const client = new SuperfluidClient()
-
-async function startPaymentStream(account) {
-  client.superTokenCreateFlow(
-    customHttpProvider,
-    ourDAIxTestContractAddress(),
-    account,
-    ourReceiverTestWallet(),
-    flowRate
-  )
-}
-
-async function stopPaymentStream(account) {
-  client.deleteFlow(
-    customHttpProvider,
-    account,
-    ourReceiverTestWallet(),
-    ourDAIxTestContractAddress
-  )
-}
+// export const url = "https://eth-goerli.alchemyapi.io/v2/zfWv3pEito9Wi7gDUSLsand11To5VEjN"
+// export const customHttpProvider = new providers.JsonRpcProvider(url)
 
 export const Player = () => {
+  // const superfluidClient = SuperfluidClient as any
+  const client = new SuperfluidClient()
+
   const [playing, setPlaying] = useState(false)
   const [charging, setCharging] = useState(false)
 
-  const { account } = useEthers()
+  const { account, library } = useEthers()
 
-  // useEffect(() => {
-  //   setPlaying(true)
-  // }, [])
+  async function startPaymentStream(account) {
+    client.superTokenCreateFlow(
+      library,
+      ourDAIxTestContractAddress(),
+      account,
+      ourReceiverTestWallet(),
+      flowRate
+    )
+  }
+
+  async function stopPaymentStream(account) {
+    client.deleteFlow(library, account, ourReceiverTestWallet(), ourDAIxTestContractAddress)
+  }
+
+  useEffect(() => {
+    async function init() {
+      if (!!library) {
+        await client.createInstance(library)
+      }
+    }
+    init()
+  }, [library, account])
 
   useEffect(() => {
     if (playing && !charging) {
