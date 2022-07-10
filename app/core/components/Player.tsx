@@ -17,7 +17,7 @@ import {
 
 import { getDefaultProvider, providers } from "ethers"
 
-const flowRate = 100
+const flowRate = 100000
 // export const url = "https://eth-goerli.alchemyapi.io/v2/zfWv3pEito9Wi7gDUSLsand11To5VEjN"
 // export const customHttpProvider = new providers.JsonRpcProvider(url)
 
