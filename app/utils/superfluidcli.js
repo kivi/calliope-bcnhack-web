@@ -18,17 +18,16 @@ class SuperfluidClient {
    */
   async createInstance(library) {
     try {
-      if (!(this as any).instance) {
+      if (!this.instance) {
         const tempInstance = await Framework.create({
           //networkName: "matic",
-          chainId: 80001, // chainID of Mumbai FIXME: based on setting, env
+          chainId: 80001,
           provider: library,
         })
-
-        ;(this as any).instance = tempInstance
+        this.instance = tempInstance
         return tempInstance
       }
-      return (this as any).instance
+      return this.instance
     } catch (err) {
       console.log(err)
       console.log(library)
@@ -36,12 +35,12 @@ class SuperfluidClient {
   }
 
   async createSigner(library) {
-    if (!(this as any).signer) {
+    if (!this.signer) {
       const instance = await this.createInstance(library)
       const tempSigner = instance.createSigner({ web3Provider: library })
-      ;(this as any)(this as any).signer = tempSigner
+      this.signer = tempSigner
     }
-    return (this as any)(this as any).signer
+    return this.signer
   }
 
   // UPGRADE + CREATE STREAM
@@ -103,9 +102,7 @@ class SuperfluidClient {
    * @description Downgrading is essentially the equivalent of withdrawing from the stream
    */
   async downgradeToken(library, amount, address) {
-    const superToken = await this.loadSuperToken(library, address)
-    const signer = await this.createSigner(library)
-
+    const superToken = this.loadSuperToken(library, adddress)
     const upgradeOp = superToken.downgrade({
       amount: amount.toString(),
     })
@@ -126,10 +123,6 @@ class SuperfluidClient {
   // UTILS
   async loadSuperToken(library, address) {
     const instance = await this.createInstance(library)
-
-    console.log("instance AAA", library, instance)
-    // return
-
     const token = await instance.loadSuperToken(address)
     return token
   }
@@ -159,12 +152,12 @@ class SuperfluidClient {
   }
 
   async balanceOf(library, account, address) {
-    const superToken = await this.loadSuperToken(library, address)
+    const superToken = this.loadSuperToken(library, adddress)
     return await superToken.balanceOf({ account })
   }
 
   async allowance(library, account, spender, adddress) {
-    const superToken = await this.loadSuperToken(library, adddress)
+    const superToken = this.loadSuperToken(library, adddress)
     return await superToken.allowance({
       account,
       spender,
@@ -172,7 +165,7 @@ class SuperfluidClient {
   }
 
   async realtimeBalanceOf(library, account, timestamp, adddress) {
-    const superToken = await this.loadSuperToken(library, adddress)
+    const superToken = this.loadSuperToken(library, adddress)
     return await superToken.realtimeBalanceOf({
       account,
       timestamp,

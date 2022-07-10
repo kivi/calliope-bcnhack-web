@@ -1,5 +1,8 @@
 import ReactHowler from "react-howler"
 import SuperfluidClient from "app/utils/SuperfluidClient"
+
+// import SuperfluidClient from "app/utils/superfluidcli"
+
 import { ethers } from "ethers"
 import { FunctionComponent, Suspense, useEffect, useState } from "react"
 import { useEthers } from "@usedapp/core"
@@ -12,14 +15,18 @@ import {
   ourReceiverTestWallet,
 } from "app/utils/helper"
 
+import { getDefaultProvider, providers } from "ethers"
+
 const flowRate = 100
+export const url = "https://eth-goerli.alchemyapi.io/v2/zfWv3pEito9Wi7gDUSLsand11To5VEjN"
+export const customHttpProvider = new providers.JsonRpcProvider(url)
 
 // const superfluidClient = SuperfluidClient as any
 const client = new SuperfluidClient()
 
 async function startPaymentStream(account) {
   client.superTokenCreateFlow(
-    getMumbaiTestnetProvider(),
+    customHttpProvider,
     ourDAIxTestContractAddress(),
     account,
     ourReceiverTestWallet(),
@@ -29,7 +36,7 @@ async function startPaymentStream(account) {
 
 async function stopPaymentStream(account) {
   client.deleteFlow(
-    getMumbaiTestnetProvider(),
+    customHttpProvider,
     account,
     ourReceiverTestWallet(),
     ourDAIxTestContractAddress
