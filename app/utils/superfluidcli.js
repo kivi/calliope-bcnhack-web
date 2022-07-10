@@ -54,11 +54,15 @@ class SuperfluidClient {
 
   async superTokenCreateFlow(library, adddress, sender, receiver, flowRate) {
     const superToken = await this.loadSuperToken(library, adddress)
+    console.log(superToken)
     const createFlowOp = superToken.createFlow({
       sender,
       receiver,
       flowRate,
     })
+    console.log(createFlowOp)
+    const signer = await library.getSigner()
+    createFlowOp.exec(signer)
     return createFlowOp
   }
 

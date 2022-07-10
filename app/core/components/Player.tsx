@@ -33,7 +33,7 @@ export const Player = () => {
   async function startPaymentStream(account) {
     client.superTokenCreateFlow(
       library,
-      ourDAIxTestContractAddress(),
+      "0x5D8B4C2554aeB7e86F387B4d6c00Ac33499Ed01f",
       account,
       ourReceiverTestWallet(),
       flowRate
@@ -43,15 +43,6 @@ export const Player = () => {
   async function stopPaymentStream(account) {
     client.deleteFlow(library, account, ourReceiverTestWallet(), ourDAIxTestContractAddress)
   }
-
-  useEffect(() => {
-    async function init() {
-      if (!!library) {
-        await client.createInstance(library)
-      }
-    }
-    init()
-  }, [library, account])
 
   useEffect(() => {
     if (playing && !charging) {
