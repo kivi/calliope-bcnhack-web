@@ -61,7 +61,7 @@ export const Player = () => {
 
       <span className="relative z-0 inline-flex shadow-sm rounded-md">
         <button type="button" className="player-btn ">
-          {"<"}
+          {/* {"<"} */}
         </button>
         <button
           type="button"
@@ -73,7 +73,7 @@ export const Player = () => {
           <img className="" src={playing ? "/pause.svg" : "play.svg"} alt="Workflow" />
         </button>
         <button type="button" className="player-btn -ml-px">
-          {">"}
+          {/* {">"} */}
         </button>
       </span>
 

@@ -59,6 +59,10 @@ footer h3 {
   @apply font-sans text-gray-400 text-base mt-0 order-1;
 }
 
+.bgi {
+  background-image: url("/bg_blurred.png");
+}
+
 .hero {
   width: 100%;
   color: #333;
