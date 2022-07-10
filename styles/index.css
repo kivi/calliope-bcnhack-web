@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"],
+  input[type="url"],
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="week"],
+  input[type="time"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="checkbox"],
+  input[type="radio"],
+  [multiple],
+  textarea,
+  select,
+  input {
+    @apply appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-turquoise focus:border-turquoise sm:text-sm;
+  }
+  /* label {
+    @apply block text-sm font-medium text-gray-700 border-white;
+  } */
+
+  /* admin */
+  select .smallForm {
+    /* width: 100px; */
+    @apply overflow-hidden max-w-xs w-min;
+  }
+
+  /* Fonts */
+  @font-face {
+    font-family: "Orbitron";
+    src: url("/fonts/Orbitron/Orbitron-Regular.ttf");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Orbitron-Bold";
+    src: url("/fonts/Orbitron/Orbitron-Bold.ttf");
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Orbitron-Black";
+    src: url("/fonts/Orbitron/Orbitron-Black.ttf");
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Montserrat-Regular";
+    src: url("/fonts/Montserrat/Montserrat-Regular.ttf");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
+}
+
+.footernav,
+.navitem,
+.menuitem,
+footer h3 {
+  @apply font-orbitron uppercase;
+}
+
+footer h3 {
+  @apply text-base font-bold text-turquoise tracking-wider;
+}
+.footernav ul li a {
+  @apply text-sm text-gray-500 hover:text-white;
+}
+
+.navitem {
+  @apply text-gray-300 hover:bg-gray-700 hover:text-turquoise px-3 py-2 rounded-md text-sm font-bold;
+}
+
+.menuitem {
+  @apply text-gray-300 hover:bg-gray-700 hover:text-turquoise rounded-md font-bold  px-3 py-2;
+}
+.large {
+  @apply rounded-md text-sm;
+}
+.mobile {
+  @apply block rounded-md text-base;
+}
+
+.copyright {
+  @apply font-sans text-gray-400 text-base mt-0 order-1;
+}
+
+.hero {
+  width: 100%;
+  color: #333;
+}
+
+.title {
+  margin: 0;
+  width: 100%;
+  padding-top: 80px;
+  line-height: 1.15;
+  font-size: 48px;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+/* upload */
+.uploadThumbnail {
+  @apply w-24 rounded-md;
+}
+
+.uploadThumbnail img {
+  display: "block";
+  width: "auto";
+  height: "100%";
+}
+
+.btn {
+  @apply w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm hover:shadow-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-turquoise;
+}
+.icon-btn {
+  @apply w-full flex justify-center rounded-md py-1 px-2 text-xs focus:ring-1 focus:ring-offset-1 focus:ring-turquoise shadow-sm hover:shadow-lg border border-transparent;
+}
+
+.btn-large {
+  @apply py-3 px-4;
+}
+
+.order-btn {
+  @apply rounded-lg text-white bg-red-500 hover:bg-red-700 focus:ring-red-500 sm:order-1 sm:ml-3;
+}
+
+.btn-disabled {
+  @apply bg-gray-200 hover:bg-gray-300;
+}
+/* button {
+  @apply btn;
+} */
+
+.primary {
+  @apply text-white hover:text-gray-200 bg-turquoise hover:bg-turquoiseDark focus:ring-turquoise shadow-sm hover:shadow-lg;
+}
+
+.secondary {
+  @apply text-turquoise hover:text-white bg-gray-200 hover:bg-turquoise border-gray-300 focus:ring-turquoise shadow-sm hover:shadow-lg;
+}
+.warning {
+  @apply text-gray-700 hover:text-gray-800 bg-yellow-300 hover:bg-yellow-400;
+}
+.danger {
+  @apply text-gray-700 hover:text-gray-800 bg-red-200 hover:bg-red-300;
+}
+
+.disabled {
+  @apply w-full flex justify-center rounded-md py-1 px-2 text-xs text-gray-300 border-dashed bg-gray-200;
+}
+
+/* Tooltip */
+.tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50 transform-gpu  transition-transform;
+}
+
+/* image hover fuer Fishreport */
+.img-wrapper img {
+  @apply rounded-md w-14 max-h-20;
+}
+
+img.hover-zoom:hover {
+  transition: opacity 0.1s ease-out 0s, transform 0.2s linear 0s;
+  transform-origin: top left;
+  animation: normal;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  transform: scale(3.5);
+
+  max-width: 320px;
+  z-index: 10;
+}
+
+.changed {
+  @apply bg-gradient-to-r from-yellow-200 via-yellow-300 to-pink-200;
+}
+
+.profile-icon svg {
+  fill: #1c9cb2; /* turquoise */
+  stroke-dashoffset: 0;
+  stroke-dasharray: 700;
+  stroke-width: 2;
+}
+.profile-icon svg:hover {
+  fill: #ccc; /* turquoise */
+}
+
+.legacyTeam table {
+  @apply min-w-full divide-y divide-gray-200;
+}
+.legacyTeam th {
+  @apply font-orbitronbold min-w-full divide-y divide-gray-200 bg-gray-100;
+}
+.legacyTeam td {
+  @apply px-6 py-4 whitespace-nowrap text-sm text-gray-500;
+}
+
+.legacyTeam td img {
+  @apply h-10 w-10 rounded-none;
+}
+
+.legacyTeam tr:nth-child(even) {
+  @apply bg-white;
+}
+
+.legacyTeam tr:nth-child(odd) {
+  @apply bg-gray-50;
+}
+
+input:checked + div {
+  @apply border-turquoise;
+}
+input:checked + div svg {
+  @apply block;
+}
+
+.userprofileicon {
+  @apply h-6 w-6 fill-current text-gray-800 hover:text-turquoise;
+}
+
+.footericon {
+  @apply h-8 w-8 fill-current text-gray-400 hover:text-turquoise;
+}
+.anglerTeamTable tbody {
+  @apply bg-white divide-y divide-gray-200;
+}
+
+.anglerTeamTable th {
+  @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+}
+
+.anglerTeamTable td {
+  @apply px-1 py-1 whitespace-nowrap sm:px-6 sm:py-4;
+}

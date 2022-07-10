@@ -8,17 +8,46 @@ import {
   useQueryErrorResetBoundary,
 } from "blitz"
 import LoginForm from "app/auth/components/LoginForm"
+import Nav from "app/core/components/Nav"
+import "app/core/styles/main.css"
+import { Suspense } from "react"
+
+import { Mumbai, ChainId, Config, DAppProvider, useEthers } from "@usedapp/core"
+import { getDefaultProvider } from "ethers"
+
+// declare global {
+//   interface Window {
+//     ethereum: any
+//   }
+// }
+
+const config: Config = {
+  readOnlyChainId: ChainId.Mumbai, // ChainId.Polygon
+  readOnlyUrls: {
+    [Mumbai.chainId]: "https://rpc-mumbai.maticvigil.com/", // getDefaultProvider("testnet"),
+  },
+}
 
 export default function App({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
 
+  const { account } = useEthers()
+
   return (
-    <ErrorBoundary
-      FallbackComponent={RootErrorFallback}
-      onReset={useQueryErrorResetBoundary().reset}
-    >
-      {getLayout(<Component {...pageProps} />)}
-    </ErrorBoundary>
+    <>
+      <Suspense fallback="loading ...">
+        <DAppProvider config={config}>
+          <Nav />
+        </DAppProvider>
+      </Suspense>
+
+      <ErrorBoundary
+        FallbackComponent={RootErrorFallback}
+        onReset={useQueryErrorResetBoundary().reset}
+      >
+        {getLayout(<Component {...pageProps} />)}
+      </ErrorBoundary>
+    </>
   )
 }
 

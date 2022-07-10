@@ -12,8 +12,10 @@ class MyDocument extends Document {
       <Html lang="en">
         <DocumentHead />
         <body>
-          <Main />
-          <BlitzScript />
+          <div className="bg-blue dark:bg-black">
+            <Main />
+            <BlitzScript />
+          </div>
         </body>
       </Html>
     )
