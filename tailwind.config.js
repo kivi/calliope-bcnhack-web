@@ -6,6 +6,9 @@ module.exports = {
       scale: {
         400: "4",
       },
+      backgroundImage: {
+        playerbg: "url('/bg_blured.png')",
+      },
 
       colors: {
         transparent: "transparent",

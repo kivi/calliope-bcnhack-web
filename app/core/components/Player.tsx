@@ -55,42 +55,30 @@ export const Player = () => {
   }, [playing])
 
   return account ? (
-    <div className="bg-white overflow-hidden shadow rounded-lg">
+    <div className="overflow-hidden shadow rounded-lg">
       <div className="px-4 py-5 sm:p-6">{/* Content goes here */}</div>
-      <div className="bg-gray-50 px-4 py-4 sm:px-6">
-        <ReactHowler src={["quedate-8-8.ogg", "quedate-8-8.mp3"]} playing={playing} />
+      <ReactHowler src={["quedate-8-8.ogg", "quedate-8-8.mp3"]} playing={playing} />
 
-        <span className="relative z-0 inline-flex shadow-sm rounded-md">
-          <button
-            type="button"
-            className="relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
-          >
-            {"<"}
-          </button>
-          <button
-            type="button"
-            className="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
-            onClick={() => {
-              playing ? setPlaying(false) : setPlaying(true)
-            }}
-          >
-            <img
-              className="bg-black h-8 w-auto"
-              src={playing ? "/pause.svg" : "play.svg"}
-              alt="Workflow"
-            />
-          </button>
-          <button
-            type="button"
-            className="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
-          >
-            {">"}
-          </button>
-        </span>
+      <span className="relative z-0 inline-flex shadow-sm rounded-md">
+        <button type="button" className="player-btn ">
+          {"<"}
+        </button>
+        <button
+          type="button"
+          className="player-btn -ml-px "
+          onClick={() => {
+            playing ? setPlaying(false) : setPlaying(true)
+          }}
+        >
+          <img className="" src={playing ? "/pause.svg" : "play.svg"} alt="Workflow" />
+        </button>
+        <button type="button" className="player-btn -ml-px">
+          {">"}
+        </button>
+      </span>
 
-        {/* Content goes here */}
-        {/* We use less vertical padding on card footers at all sizes than on headers or body sections */}
-      </div>
+      {/* Content goes here */}
+      {/* We use less vertical padding on card footers at all sizes than on headers or body sections */}
     </div>
   ) : (
     <p>Please Connect</p>

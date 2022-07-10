@@ -55,7 +55,6 @@ export default function Nav() {
                     src="/favicon.svg"
                     alt="Workflow"
                   />
-                  <img className="hidden lg:block h-8 w-auto" src="/logo.svg" alt="Workflow" />
                 </div>
                 <div className="">
                   <img
@@ -66,11 +65,13 @@ export default function Nav() {
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    <img
+                    <img className="hidden lg:block h-8 w-auto" src="/logo.svg" alt="Workflow" />
+
+                    {/* <img
                       className="hidden lg:block h-8 w-auto"
                       src="/minimizer.svg"
                       alt="Workflow"
-                    />
+                    /> */}
 
                     {/* {navigation.map((item) => (
                       <a

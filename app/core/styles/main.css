@@ -38,7 +38,7 @@
 }
 
 body {
-  @apply font-sans text-lg;
+  @apply font-sans text-lg bg-gray-800;
 }
 
 .footernav,
@@ -53,20 +53,6 @@ footer h3 {
 }
 .footernav ul li a {
   @apply text-sm text-gray-500 hover:text-white;
-}
-
-.navitem {
-  @apply text-gray-300 hover:bg-gray-700 hover:text-green px-3 py-2 rounded-md text-sm font-bold;
-}
-
-.menuitem {
-  @apply text-gray-300 hover:bg-gray-700 hover:text-green rounded-md font-bold  px-3 py-2;
-}
-.large {
-  @apply rounded-md text-sm;
-}
-.mobile {
-  @apply block rounded-md text-base;
 }
 
 .copyright {
@@ -105,8 +91,8 @@ footer h3 {
 .btn {
   @apply text-grey100 border-grey100 border-solid border-2 w-full flex justify-center py-2 px-4 rounded-full shadow-sm hover:text-black hover:shadow-lg hover:bg-grey100 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green;
 }
-.icon-btn {
-  @apply w-full flex justify-center rounded-md py-1 px-2 text-xs focus:ring-1 focus:ring-offset-1 focus:ring-green shadow-sm hover:shadow-lg border border-transparent;
+.player-btn {
+  @apply text-grey100 justify-center rounded-md py-1 px-2 text-xs focus:ring-1 focus:ring-offset-1 focus:ring-green shadow-sm hover:shadow-lg border border-transparent;
 }
 
 .btn-large {
@@ -185,28 +171,3 @@ input:checked + div {
 input:checked + div svg {
   @apply block;
 }
-
-.userprofileicon {
-  @apply h-6 w-6 fill-current text-gray-800 hover:text-green;
-}
-
-.footericon {
-  @apply h-8 w-8 fill-current text-gray-400 hover:text-green;
-}
-.anglerTeamTable tbody {
-  @apply bg-white divide-y divide-gray-200;
-}
-
-.anglerTeamTable th {
-  @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
-}
-
-.anglerTeamTable td {
-  @apply px-1 py-1 whitespace-nowrap sm:px-6 sm:py-4;
-}
-
-/*
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
-*/

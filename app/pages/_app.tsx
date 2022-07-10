@@ -40,7 +40,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <Suspense fallback="loading ...">
         <DAppProvider config={config}>
           <Nav />
-          <Player />
+          <div className="flex justify-center bg-playerbg ...">
+            <Player />
+          </div>
         </DAppProvider>
       </Suspense>
 
