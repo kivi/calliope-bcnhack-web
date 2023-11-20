@@ -8,7 +8,7 @@ const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
     <>
       <Head>
         <title>{title || "calliope"}</title>
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
 
       {children}

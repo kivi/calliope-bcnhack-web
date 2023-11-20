@@ -41,57 +41,9 @@ body {
   @apply font-sans text-lg bg-gray-800;
 }
 
-.footernav,
-.navitem,
-.menuitem,
-footer h3 {
-  @apply uppercase;
+.playerbg {
+  @apply bg-transparent bg-[url('/bg_blurred.png')] bg-no-repeat bg-center;
 }
-
-footer h3 {
-  @apply text-base font-bold text-green tracking-wider;
-}
-.footernav ul li a {
-  @apply text-sm text-gray-500 hover:text-white;
-}
-
-.copyright {
-  @apply font-sans text-gray-400 text-base mt-0 order-1;
-}
-
-.bgi {
-  background-image: url("/bg_blurred.png");
-}
-
-.hero {
-  width: 100%;
-  color: #333;
-}
-
-.title {
-  margin: 0;
-  width: 100%;
-  padding-top: 80px;
-  line-height: 1.15;
-  font-size: 48px;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-/* upload */
-.uploadThumbnail {
-  @apply w-24 rounded-md;
-}
-
-.uploadThumbnail img {
-  display: "block";
-  width: "auto";
-  height: "100%";
-}
-
 .btn {
   @apply text-grey100 border-grey100 border-solid border-2 w-full flex justify-center py-2 px-4 rounded-full shadow-sm hover:text-black hover:shadow-lg hover:bg-grey100 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green;
 }
@@ -99,61 +51,7 @@ footer h3 {
   @apply text-grey100 justify-center rounded-md py-1 px-2 text-xs focus:ring-1 focus:ring-offset-1 focus:ring-green shadow-sm hover:shadow-lg border border-transparent;
 }
 
-.btn-large {
-  @apply py-3 px-4;
-}
 
-.order-btn {
-  @apply rounded-lg text-white bg-red-500 hover:bg-red-700 focus:ring-red-500 sm:order-1 sm:ml-3;
-}
-
-.btn-disabled {
-  @apply bg-gray-200 hover:bg-gray-300;
-}
-
-.primary {
-  @apply text-white hover:text-gray-200 bg-green hover:bg-lightblue focus:ring-green shadow-sm hover:shadow-lg;
-}
-
-.secondary {
-  @apply text-green hover:text-white bg-gray-200 hover:bg-green border-gray-300 focus:ring-green shadow-sm hover:shadow-lg;
-}
-.warning {
-  @apply text-gray-700 hover:text-gray-800 bg-yellow-300 hover:bg-yellow-400;
-}
-.danger {
-  @apply text-gray-700 hover:text-gray-800 bg-red-200 hover:bg-red-300;
-}
-
-.disabled {
-  @apply w-full flex justify-center rounded-md py-1 px-2 text-xs text-gray-300 border-dashed bg-gray-200;
-}
-
-/* Tooltip */
-.tooltip {
-  @apply invisible absolute;
-}
-
-.has-tooltip:hover .tooltip {
-  @apply visible z-50 transform-gpu  transition-transform;
-}
-
-/* image hover fuer Fishreport */
-.img-wrapper img {
-  @apply rounded-md w-14 max-h-20;
-}
-
-img.hover-zoom:hover {
-  transition: opacity 0.1s ease-out 0s, transform 0.2s linear 0s;
-  transform-origin: top left;
-  animation: normal;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-
-  transform: scale(3.5);
-
-  max-width: 320px;
-  z-index: 10;
-}
 
 .changed {
   @apply bg-gradient-to-r from-yellow-200 via-yellow-300 to-pink-200;

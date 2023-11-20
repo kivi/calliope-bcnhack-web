@@ -12,9 +12,11 @@ class MyDocument extends Document {
       <Html lang="en">
         <DocumentHead />
         <body>
-          <div className="bg-playerbg">
-            <Main />
-            <BlitzScript />
+          <div className="bg-playerbgmax-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto">
+              <Main />
+              <BlitzScript />
+            </div>
           </div>
         </body>
       </Html>

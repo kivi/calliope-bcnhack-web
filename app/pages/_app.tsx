@@ -37,21 +37,18 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Suspense fallback="loading ...">
-        <DAppProvider config={config}>
+      <DAppProvider config={config}>
+        <Suspense fallback="loading ...">
           <Nav />
-          <div className="flex justify-center bg-playerbg ...">
-            <Player />
-          </div>
-        </DAppProvider>
-      </Suspense>
+        </Suspense>
 
-      <ErrorBoundary
-        FallbackComponent={RootErrorFallback}
-        onReset={useQueryErrorResetBoundary().reset}
-      >
-        {getLayout(<Component {...pageProps} />)}
-      </ErrorBoundary>
+        <ErrorBoundary
+          FallbackComponent={RootErrorFallback}
+          onReset={useQueryErrorResetBoundary().reset}
+        >
+          {getLayout(<Component {...pageProps} />)}
+        </ErrorBoundary>
+      </DAppProvider>
     </>
   )
 }
